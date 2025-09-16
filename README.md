@@ -94,4 +94,4 @@ wallet/
 - TABLE WALLET
 - COLUMNS: id, name, email, password, balance
 
-## GitHub Repository: 
+## GitHub Repository: https://github.com/Dharshan465/OnlineDigitalWalletApplication.git
