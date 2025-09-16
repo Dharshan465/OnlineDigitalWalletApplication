@@ -1,0 +1,13 @@
+package ford.assignment16.OnlineDigitalWalletApplication;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication(scanBasePackages = "ford.assignment16")
+public class OnlineDigitalWalletApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(OnlineDigitalWalletApplication.class, args);
+	}
+
+}
