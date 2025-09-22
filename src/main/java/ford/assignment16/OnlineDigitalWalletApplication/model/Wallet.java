@@ -9,7 +9,7 @@ public class Wallet {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int walletId;
+    private Integer walletId;
 
     @NotNull(message = "Customer name cannot be null")
     @NotBlank(message = "Customer name cannot be blank")
@@ -37,7 +37,7 @@ public class Wallet {
     public Wallet() {
     }
 
-    public Wallet(int walletId, String customerName, String email, String password, double balance) {
+    public Wallet(Integer walletId, String customerName, String email, String password, double balance) {
         this.walletId = walletId;
         this.customerName = customerName;
         this.email = email;
