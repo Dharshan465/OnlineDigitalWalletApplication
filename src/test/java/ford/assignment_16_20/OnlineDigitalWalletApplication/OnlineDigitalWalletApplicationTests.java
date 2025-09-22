@@ -1,4 +1,4 @@
-package ford.assignment16.OnlineDigitalWalletApplication;
+package ford.assignment_16_20.OnlineDigitalWalletApplication;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

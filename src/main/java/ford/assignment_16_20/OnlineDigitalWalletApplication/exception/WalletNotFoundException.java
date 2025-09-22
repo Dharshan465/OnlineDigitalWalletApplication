@@ -1,4 +1,4 @@
-package ford.assignment16.OnlineDigitalWalletApplication.exception;
+package ford.assignment_16_20.OnlineDigitalWalletApplication.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

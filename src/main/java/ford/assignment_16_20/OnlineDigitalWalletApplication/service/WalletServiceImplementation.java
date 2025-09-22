@@ -1,13 +1,13 @@
-package ford.assignment16.OnlineDigitalWalletApplication.service;
+package ford.assignment_16_20.OnlineDigitalWalletApplication.service;
 
-import ford.assignment16.OnlineDigitalWalletApplication.Repository.WalletRepository;
+import ford.assignment_16_20.OnlineDigitalWalletApplication.Repository.WalletRepository;
 import ford.assignment16.OnlineDigitalWalletApplication.exception.*;
-import ford.assignment16.OnlineDigitalWalletApplication.model.Wallet;
+import ford.assignment_16_20.OnlineDigitalWalletApplication.exception.*;
+import ford.assignment_16_20.OnlineDigitalWalletApplication.model.Wallet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 
 @Service

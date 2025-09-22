@@ -1,6 +1,7 @@
-package ford.assignment16.OnlineDigitalWalletApplication.controller;
+package ford.assignment_16_20.OnlineDigitalWalletApplication.controller;
 
-import ford.assignment16.OnlineDigitalWalletApplication.service.WalletService;
+import ford.assignment_16_20.OnlineDigitalWalletApplication.exception.*;
+import ford.assignment_16_20.OnlineDigitalWalletApplication.service.WalletService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 import ford.assignment16.OnlineDigitalWalletApplication.exception.*;
-import ford.assignment16.OnlineDigitalWalletApplication.model.Wallet;
+import ford.assignment_16_20.OnlineDigitalWalletApplication.model.Wallet;
 
 @RestController
 @RequestMapping("api/v1/wallet")

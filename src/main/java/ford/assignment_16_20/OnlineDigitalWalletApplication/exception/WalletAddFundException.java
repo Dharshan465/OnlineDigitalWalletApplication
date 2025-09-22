@@ -1,4 +1,4 @@
-package ford.assignment16.OnlineDigitalWalletApplication.exception;
+package ford.assignment_16_20.OnlineDigitalWalletApplication.exception;
 
 public class WalletAddFundException extends Exception {
     public WalletAddFundException(String message) {

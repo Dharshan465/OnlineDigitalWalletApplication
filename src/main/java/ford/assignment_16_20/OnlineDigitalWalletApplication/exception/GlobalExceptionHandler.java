@@ -1,4 +1,4 @@
-package ford.assignment16.OnlineDigitalWalletApplication.exception;
+package ford.assignment_16_20.OnlineDigitalWalletApplication.exception;
 
 
 
@@ -10,12 +10,9 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.context.request.WebRequest;
 
 import java.time.LocalDateTime;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestControllerAdvice

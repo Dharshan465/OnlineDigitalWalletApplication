@@ -1,6 +1,6 @@
-package ford.assignment16.OnlineDigitalWalletApplication.Repository;
+package ford.assignment_16_20.OnlineDigitalWalletApplication.Repository;
 
-import ford.assignment16.OnlineDigitalWalletApplication.model.Wallet;
+import ford.assignment_16_20.OnlineDigitalWalletApplication.model.Wallet;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

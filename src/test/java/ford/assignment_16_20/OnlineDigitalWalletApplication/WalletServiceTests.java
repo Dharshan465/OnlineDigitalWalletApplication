@@ -1,9 +1,10 @@
-package ford.assignment16.OnlineDigitalWalletApplication;
+package ford.assignment_16_20.OnlineDigitalWalletApplication;
 
-import ford.assignment16.OnlineDigitalWalletApplication.Repository.WalletRepository;
+import ford.assignment_16_20.OnlineDigitalWalletApplication.Repository.WalletRepository;
 import ford.assignment16.OnlineDigitalWalletApplication.exception.*;
-import ford.assignment16.OnlineDigitalWalletApplication.model.Wallet;
-import ford.assignment16.OnlineDigitalWalletApplication.service.WalletService;
+import ford.assignment_16_20.OnlineDigitalWalletApplication.exception.*;
+import ford.assignment_16_20.OnlineDigitalWalletApplication.model.Wallet;
+import ford.assignment_16_20.OnlineDigitalWalletApplication.service.WalletService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

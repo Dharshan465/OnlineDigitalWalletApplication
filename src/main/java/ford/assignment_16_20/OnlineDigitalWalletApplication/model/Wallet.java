@@ -1,4 +1,4 @@
-package ford.assignment16.OnlineDigitalWalletApplication.model;
+package ford.assignment_16_20.OnlineDigitalWalletApplication.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;

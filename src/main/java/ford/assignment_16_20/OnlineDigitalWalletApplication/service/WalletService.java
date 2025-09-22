@@ -1,7 +1,8 @@
-package ford.assignment16.OnlineDigitalWalletApplication.service;
+package ford.assignment_16_20.OnlineDigitalWalletApplication.service;
 
 import ford.assignment16.OnlineDigitalWalletApplication.exception.*;
-import ford.assignment16.OnlineDigitalWalletApplication.model.Wallet;
+import ford.assignment_16_20.OnlineDigitalWalletApplication.exception.*;
+import ford.assignment_16_20.OnlineDigitalWalletApplication.model.Wallet;
 
 import java.util.Collection;
 
