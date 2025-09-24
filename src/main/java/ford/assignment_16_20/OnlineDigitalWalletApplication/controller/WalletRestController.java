@@ -6,11 +6,12 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
-import ford.assignment16.OnlineDigitalWalletApplication.exception.*;
 import ford.assignment_16_20.OnlineDigitalWalletApplication.model.Wallet;
 
 @RestController
@@ -27,10 +28,9 @@ public class WalletRestController {
 
 
     @PostMapping
-    public String createWallet(@Valid @RequestBody Wallet wallet) throws WalletException {
-        this.walletService.registerNewUserWallet(wallet);
-        return "User wallet created successfully with emailId: " + wallet.getEmail();
-
+    public ResponseEntity<Wallet> createWallet(@Valid @RequestBody Wallet wallet) throws WalletException {
+        Wallet createdWallet = this.walletService.registerNewUserWallet(wallet);
+        return new ResponseEntity<>(createdWallet, HttpStatus.CREATED);
     }
 
     @GetMapping("/emailId")

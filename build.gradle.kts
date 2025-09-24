@@ -10,7 +10,7 @@ description = "Wallet project for Spring Boot with Spring Data JPA and H2 Databa
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+		languageVersion = JavaLanguageVersion.of(21)
 	}
 }
 

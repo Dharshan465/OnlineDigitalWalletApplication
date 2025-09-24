@@ -1,11 +1,11 @@
 package ford.assignment_16_20.OnlineDigitalWalletApplication.service;
 
-import ford.assignment16.OnlineDigitalWalletApplication.exception.*;
 import ford.assignment_16_20.OnlineDigitalWalletApplication.exception.*;
 import ford.assignment_16_20.OnlineDigitalWalletApplication.model.Wallet;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-
+@Service
 public interface WalletService {
 
         Wallet registerNewUserWallet(Wallet newWallet) throws WalletException;

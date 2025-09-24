@@ -8,7 +8,7 @@ public class Wallet {
 
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    //@GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer walletId;
 
     @NotNull(message = "Customer name cannot be null")
@@ -45,11 +45,11 @@ public class Wallet {
         this.balance = balance;
     }
 
-    public int getWalletId() {
+    public Integer getWalletId() {
         return walletId;
     }
 
-    public void setWalletId(int walletId) {
+    public void setWalletId(Integer walletId) {
         this.walletId = walletId;
     }
 
@@ -82,6 +82,13 @@ public class Wallet {
     }
 
     public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Wallet(String customerName, String email, String password,double balance) {
+        this.customerName = customerName;
+        this.balance = balance;
+        this.email = email;
         this.password = password;
     }
 
