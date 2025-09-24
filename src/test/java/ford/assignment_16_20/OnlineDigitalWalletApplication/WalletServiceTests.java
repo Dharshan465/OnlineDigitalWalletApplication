@@ -1,7 +1,6 @@
 package ford.assignment_16_20.OnlineDigitalWalletApplication;
 
 import ford.assignment_16_20.OnlineDigitalWalletApplication.Repository.WalletRepository;
-import ford.assignment16.OnlineDigitalWalletApplication.exception.*;
 import ford.assignment_16_20.OnlineDigitalWalletApplication.exception.*;
 import ford.assignment_16_20.OnlineDigitalWalletApplication.model.Wallet;
 import ford.assignment_16_20.OnlineDigitalWalletApplication.service.WalletService;
@@ -38,7 +37,7 @@ public class WalletServiceTests {
     void setUpTestDataBeforeEachTest() {
         this.walletRepository.deleteAll();
 
-        this.wallet = new Wallet(null, "MyName", "name@gmail.com", "123My@Name", 5000.0);
+        this.wallet = new Wallet(1, "MyName", "name@gmail.com", "123My@Name", 5000.0);
 
     }
 
@@ -154,8 +153,8 @@ public class WalletServiceTests {
 
     @Test
     void transferFundsTest() throws WalletException, WalletTransferFundException, WalletNotFoundException {
-        Wallet senderWallet = new Wallet(null, "Sender", "sender@gmail.com", "Pass@123", 1000.0);
-        Wallet receiverWallet = new Wallet(null, "Receiver", "receiver@gmail.com", "Pass@465", 200.0);
+        Wallet senderWallet = new Wallet(1, "Sender", "sender@gmail.com", "Pass@123", 1000.0);
+        Wallet receiverWallet = new Wallet(2, "Receiver", "receiver@gmail.com", "Pass@465", 200.0);
 
         this.walletService.registerNewUserWallet(senderWallet);
         this.walletService.registerNewUserWallet(receiverWallet);
@@ -176,8 +175,8 @@ public class WalletServiceTests {
     @Test
     void transferFundsInsufficientBalanceTest() throws WalletException, WalletNotFoundException {
         // Test for transferring funds with insufficient balance in the sender's wallet.
-        Wallet senderWallet = new Wallet(null, "Sender", "sender@gmail.com", "P12!ass1", 100.0);
-        Wallet receiverWallet = new Wallet(null, "Receiver", "receiver@gmail.com", "P!23ass2", 200.0);
+        Wallet senderWallet = new Wallet(1, "Sender", "sender@gmail.com", "P12!ass1", 100.0);
+        Wallet receiverWallet = new Wallet(2, "Receiver", "receiver@gmail.com", "P!23ass2", 200.0);
 
         this.walletService.registerNewUserWallet(senderWallet);
         this.walletService.registerNewUserWallet(receiverWallet);
@@ -193,7 +192,7 @@ public class WalletServiceTests {
 
     @Test
     void transferFundsNonExistentSenderTest() throws WalletException, WalletNotFoundException {
-        Wallet receiverWallet = new Wallet(null, "Receiver", "receiver@gmail.com", "Pass@123", 200.0);
+        Wallet receiverWallet = new Wallet(1, "Receiver", "receiver@gmail.com", "Pass@123", 200.0);
         this.walletService.registerNewUserWallet(receiverWallet);
 
         assertThrows(WalletNotFoundException.class,
@@ -205,7 +204,7 @@ public class WalletServiceTests {
     @Test
     void transferFundsNonExistentReceiverTest() throws WalletException, WalletNotFoundException {
         // Test for transferring funds to a non-existent receiver wallet.
-        Wallet senderWallet = new Wallet(null, "Sender", "sender@gmail.com", "Pass!123", 1000.0);
+        Wallet senderWallet = new Wallet(1, "Sender", "sender@gmail.com", "Pass!123", 1000.0);
         this.walletService.registerNewUserWallet(senderWallet);
 
         assertThrows(WalletNotFoundException.class,
@@ -217,8 +216,8 @@ public class WalletServiceTests {
     @Test
     void transferNegativeAmountShouldThrowExceptionTest() throws WalletException, WalletNotFoundException {
         // Test for transferring a negative amount of funds.
-        Wallet senderWallet = new Wallet(null, "Sender", "sender@gmail.com", "passP1!@#@", 1000.0);
-        Wallet receiverWallet = new Wallet(null, "Receiver", "receiver@gmail.com", "pass123@P2", 200.0);
+        Wallet senderWallet = new Wallet(1, "Sender", "sender@gmail.com", "passP1!@#@", 1000.0);
+        Wallet receiverWallet = new Wallet(2, "Receiver", "receiver@gmail.com", "pass123@P2", 200.0);
 
         this.walletService.registerNewUserWallet(senderWallet);
         this.walletService.registerNewUserWallet(receiverWallet);
@@ -235,8 +234,8 @@ public class WalletServiceTests {
     @Test
     void getAllCustomerWalletsTest() throws WalletException, WalletNotFoundException {
         // Test for retrieving all customer wallets.
-        Wallet wallet1 = new Wallet(null, "User one", "user1@gmail.com", "passP1!@#@", 100.0);
-        Wallet wallet2 = new Wallet(null, "Usee two", "user2@gmail.com", "passP1!@#@", 200.0);
+        Wallet wallet1 = new Wallet(1, "User one", "user1@gmail.com", "passP1!@#@", 100.0);
+        Wallet wallet2 = new Wallet(2, "Usee two", "user2@gmail.com", "passP1!@#@", 200.0);
         this.walletService.registerNewUserWallet(wallet1);
         this.walletService.registerNewUserWallet(wallet2);
 
@@ -312,9 +311,9 @@ public class WalletServiceTests {
     @Test
     void getWalletsByBalanceRangeTest() throws WalletException, WalletNotFoundException {
         // Test for retrieving wallets within a specified balance range.
-        Wallet wallet1 = new Wallet(null, "User one", "user1@gmail.com", "passP1!@#@", 100.0);
-        Wallet wallet2 = new Wallet(null, "User two", "user2@gmail.com", "passP1!@#@", 500.0);
-        Wallet wallet3 = new Wallet(null, "User three", "user3@gmail.com", "passP1!@#@", 1500.0);
+        Wallet wallet1 = new Wallet(1, "User one", "user1@gmail.com", "passP1!@#@", 100.0);
+        Wallet wallet2 = new Wallet(2, "User two", "user2@gmail.com", "passP1!@#@", 500.0);
+        Wallet wallet3 = new Wallet(3, "User three", "user3@gmail.com", "passP1!@#@", 1500.0);
         this.walletService.registerNewUserWallet(wallet1);
         this.walletService.registerNewUserWallet(wallet2);
         this.walletService.registerNewUserWallet(wallet3);
@@ -332,7 +331,7 @@ public class WalletServiceTests {
     @Test
     void getWalletsByBalanceRangeNoMatchTest() throws WalletException, WalletNotFoundException {
         // Test for retrieving wallets within a range with no matching wallets.
-        Wallet wallet1 = new Wallet(null, "User one", "user1@gmail.com", "passP1!@#@", 100.0);
+        Wallet wallet1 = new Wallet(1, "User one", "user1@gmail.com", "passP1!@#@", 100.0);
         this.walletService.registerNewUserWallet(wallet1);
 
         assertThrows(WalletException.class, () -> this.walletService.getWalletsByBalanceRange(200.0, 300.0));
@@ -343,8 +342,8 @@ public class WalletServiceTests {
     @Test
     void getWalletsByExactBalanceTest() throws WalletException, WalletNotFoundException {
         // Test for retrieving wallets with an exact balance.
-        Wallet wallet1 = new Wallet(null, "Userone", "user1@gmail.com", "passP1!@#@", 100.0);
-        Wallet wallet2 = new Wallet(null, "User two", "user2@gmail.com", "passP1!@#@", 500.0);
+        Wallet wallet1 = new Wallet(1, "Userone", "user1@gmail.com", "passP1!@#@", 100.0);
+        Wallet wallet2 = new Wallet(2, "User two", "user2@gmail.com", "passP1!@#@", 500.0);
         this.walletService.registerNewUserWallet(wallet1);
         this.walletService.registerNewUserWallet(wallet2);
 
@@ -360,7 +359,7 @@ public class WalletServiceTests {
     @Test
     void getWalletsByExactBalanceNoMatchTest() throws WalletException, WalletNotFoundException {
         // Test for retrieving wallets with an exact balance that does not exist.
-        Wallet wallet1 = new Wallet(null, "User one", "user1@gmail.com", "passP1!@#@", 100.0);
+        Wallet wallet1 = new Wallet(1, "User one", "user1@gmail.com", "passP1!@#@", 100.0);
         this.walletService.registerNewUserWallet(wallet1);
 
         assertThrows(WalletException.class, () -> this.walletService.getWalletsByExactBalance(200.0));
@@ -371,9 +370,9 @@ public class WalletServiceTests {
     @Test
     void getWalletsByEmailDomainTest() throws WalletException, WalletNotFoundException {
         // Test for retrieving wallets by email domain.
-        Wallet wallet1 = new Wallet(null, "Usera", "user1@ford.com", "passP1!@#@", 100.0);
-        Wallet wallet2 = new Wallet(null, "Userb", "user2@gmail.com", "passP1assP1!@#@", 500.0);
-        Wallet wallet3 = new Wallet(null, "Userc", "user3@ford.com", "passsP1!@#@3", 1500.0);
+        Wallet wallet1 = new Wallet(1, "Usera", "user1@ford.com", "passP1!@#@", 100.0);
+        Wallet wallet2 = new Wallet(2, "Userb", "user2@gmail.com", "passP1assP1!@#@", 500.0);
+        Wallet wallet3 = new Wallet(3, "Userc", "user3@ford.com", "passsP1!@#@3", 1500.0);
         this.walletService.registerNewUserWallet(wallet1);
         this.walletService.registerNewUserWallet(wallet2);
         this.walletService.registerNewUserWallet(wallet3);
@@ -394,7 +393,7 @@ public class WalletServiceTests {
     @Test
     void getWalletsByEmailDomainNoMatchTest() throws WalletException, WalletNotFoundException {
         // Test for retrieving wallets by email domain with no matching wallets.
-        Wallet wallet1 = new Wallet(null, "Usera", "user1@ford.com", "assP1!@#@as", 100.0);
+        Wallet wallet1 = new Wallet(1, "Usera", "user1@ford.com", "assP1!@#@as", 100.0);
         this.walletService.registerNewUserWallet(wallet1);
 
         assertThrows(WalletException.class, () -> this.walletService.getWalletsByEmailDomain("example.com"));
